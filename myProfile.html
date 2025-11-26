@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - Kalid Jibril Hasen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .id-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .main-info {
+            flex: 3;
+            min-width: 300px;
+            padding: 30px;
+        }
+        
+        .sidebar {
+            flex: 2;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-left: 1px solid #eaeaea;
+        }
+        
+        .info-section {
+            margin-bottom: 30px;
+        }
+        
+        .info-section h2 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-section h2 i {
+            margin-right: 10px;
+            color: #4a6491;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-label i {
+            margin-right: 8px;
+            color: #4a6491;
+            width: 16px;
+        }
+        
+        .info-value {
+            color: #2c3e50;
+            font-size: 16px;
+            padding-left: 24px;
+        }
+        
+        .label-strong {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, #e8f4fd, #f0f8ff);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .highlight .info-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .navigation {
+            display: flex;
+            background-color: #f1f5f9;
+            border-top: 1px solid #eaeaea;
+            justify-content: center;
+        }
+        
+        .nav-item {
+            padding: 18px 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: #555;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .nav-item:hover {
+            background-color: #e8f0fe;
+            color: #2c3e50;
+        }
+        
+        .nav-item.active {
+            background-color: #e8f0fe;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .contact-info {
+            background: linear-gradient(to right, #f9f9f9, #ffffff);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eaeaea;
+        }
+        
+        .contact-info .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-info .info-item:hover {
+            background-color: #f0f8ff;
+        }
+        
+        .contact-info .info-label {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        
+        .contact-info .info-value {
+            padding-left: 0;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #eaeaea;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 26px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+        
+        .program-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="header">
+            <h1>Kalid Jibril Hasen</h1>
+            <p>Software Engineering Student</p>
+            <div class="id-badge">UGR/188299/16</div>
+        </div>
+        
+        <div class="navigation">
+            <div class="nav-item active">My Info</div>  
+        </div>
+        
+        <div class="content">
+            <div class="main-info">
+                <div class="info-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Academic Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-user"></i> Full Name</div>
+                            <div class="info-value">Kalid Jibril Hasen</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-id-card"></i> ID Number</div>
+                            <div class="info-value">UGR/188299/16</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-calendar-alt"></i> Admission Year</div>
+                            <div class="info-value">2023/2024</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-building"></i> Department</div>
+                            <div class="info-value">Computing Department (EIT-M)</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-laptop-code"></i> Program</div>
+                            <div class="info-value">Software Engineering (Undergraduate Regular)</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-users"></i> Class Year</div>
+                            <div class="info-value">3rd Year</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-chalkboard"></i> Section</div>
+                            <div class="info-value">Section 1</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h2><i class="fas fa-chart-line"></i> Current Status</h2>
+                    <div class="highlight">
+                        <div class="info-item">                            
+                            <div class="info-value" title="This is your current academic period.">
+                                <span class="status-indicator"></span>
+                                2025/2026 1st Semester - Active
+                            </div>
+                        </div>                      
+                    </div>
+                </div>
+              </div>    
+            <div class="sidebar">
+                <div class="info-section">
+                    <h2><i class="fas fa-university"></i> Institution Details</h2>
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-school"></i> College</div>
+                        <div class="info-value">Ethiopian Institute of Technology - Mekelle</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-laptop-code"></i> Program</div>
+                        <div class="info-value">
+                            Software Engineering (Undergraduate Regular)
+                            <div class="program-badge">Active</div>
+                        </div>
+                    </div>          
+                </div>
+                <div class="info-section">
+                    <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-label label-strong"><i class="fas fa-envelope"></i> Email:</div>
+                            <div class="info-value">khaalidjibriil26@gmail.com</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label label-strong"><i class="fas fa-phone"></i> Phone:</div>
+                            <div class="info-value">+251934843554</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

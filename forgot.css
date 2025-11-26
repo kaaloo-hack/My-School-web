@@ -1,0 +1,36 @@
+* {
+margin: 5px;
+padding: 4x 2px;
+box-sizing:border-box;
+font-family: "poppins", sans-serif;
+}
+.home-container{
+  display: flexbox;
+  background: linear-gradient(rgb(157, 147, 157) , rgb(185, 186, 185)); 
+  border:0cqi; 
+  padding:150px 70px;           
+  }
+  .forgot-card{
+    display: flexbox;
+    padding: 10px 15px;
+    border: 50px;
+    box-shadow: inset;
+    
+  }
+  .email-btn{
+    display: inline-block;
+            padding: 10px 20px;
+            background-color: #cfd5de;
+            color: rgb(48, 2, 253);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+  }
+  .submit-btn{
+    margin-left: 50px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }

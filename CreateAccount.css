@@ -1,0 +1,19 @@
+
+.home-card{
+   position: center;
+    height: 500px;
+    width: 100%;
+    display: block;
+    align-content: center;
+    border-radius: 10px;
+    text-align:center;
+    padding: 10px 20px;
+    box-shadow: 3px 1px 4px  8px #4b8c58;
+
+}
+.create-button{
+  background-color: #00bfff;
+  border-radius: 3px;
+  padding: 10px 20px;
+  border: none;
+}

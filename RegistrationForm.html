@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+     <title>Registration Page </title>
+     <link rel="stylesheet" href="Registration.css">
+ </head>
+    <body> 
+      <header class="bar">
+        <a href="./HomePage.html">HOME</a>
+        <a href="./AboutUs.html"> ABOUT</a>
+        <a href="./CreateAccount.html"> CREATE ACCOUNT</a>
+        <a href="./LoginPage.html"> LOGIN</a>
+        <a href="#">CONTACT</a> 
+      </header>
+        <fieldset> 
+            <h3 style="position: center; text-align: center;"> complete the form properly </h3> 
+            <legend>REGISTRAION FORM</legend>
+<form >
+     Register For: <select>
+        <option value="grade 9"  id="G-9"> Grade 9  </option>
+        <option value="grade 10" id="G-10"> Grade 10 </option>
+        <option value="grade 11" id="G-11"> Grade 11</option>
+        <option value="grade 12" id="G-12"> Grade 12 </option>
+     </select> 
+     <div class="info">
+      <div class="personal-info">
+       <h5>personal information <a style="text-decoration-line: none; color: red;"> *</a> </h5>
+        First name: <input type="text" name="firstname" id="fname">  <br><br>
+        Middle name: <input type="text" name="middlename" id="mname"> <br><br>
+        Last Name: <input type="text" name="lastname" id="lname"><br><br>
+        Birth date: <input type="date" name="birthdate" id="date">
+      </div>
+      <div class="gender-M-status">  
+         Gender: 
+          <input type="radio" name="gender" value="male" id="male">
+           <label for="male"> Male </label>
+           <input type="radio" name="gender" value="female" id="female">
+           <label for="female"> Female </label> <br>  
+         Marital Status:
+          <br>  <input type="radio" name="status" value="single" id="sgl">
+          <label for="single"> Single </label>
+          <input type="radio" name="status" value="Married" id="mrd">
+          <label for="married"> Married </label><br> 
+       </div>
+      </div>
+    <h5>Transcript Attachment<a style="text-decoration-line: none; color: red;"> *</a> </h5>
+     Previous School name: <input type="text" name="schoolname" > <br> <br>
+     Transcript: <input type="file" name="transcript" id="trspt" No file choosen><br><br>
+   <div class="container">
+     <div class="Emergency-contact">
+      <h5>Emergency Contact</h5>
+     Full Name: <input type="text" > <br><br>
+     Relationship: <select name="option-selection" >
+      <option value="Father"> Father</option>
+        <option value="Mother"> Mother </option>
+        <option value="Brother"> Brother</option>
+        <option value="Uncle"> Uncle </option>
+     </select>  <br> <br>
+      Gender: 
+      <select>
+        <option value="zero"> None </option>
+        <option value="one"> Male</option>
+        <option value="two"> Female</option>
+      </select> <br> <br>
+     Email/Phone: <input type="text"><br>  
+ </div>
+ <div class="Contact-address">
+    <h5>Contact Address <a  style="text-decoration-line: none; color: red;">*</a> </h5>
+      <label > <i>country: <select class="form-select" autocomplete="country-name" id="cntry">
+      <option value="select"> select a country</option>
+      <option value="Eg"> Ethiopia</option>
+      <option value="So"> Somalia</option> 
+      <option value="Ke"> Kenya</option>
+      <option value="Su"> Sudan</option> 
+      <option value="Ug"> Uganda</option> 
+      </select> <br>
+      <label > <i>Region: </i></label> <input class="solid-line" type="text"><br>
+      <label > <i>Zone:  </i></label> <input class="solid-line" type="text"><br>
+      <label > <i>Street Address: </i></label> <input class="solid-line" type="text"><br>
+      <label > <i> Home Address:</i></label> <input class="solid-line" type="text"><br>
+  </div>
+   </div>
+   
+
+<div class="attachments">
+  <div class="photo&ID">
+ <h5>Photo and ID Attachment <a style="text-decoration-line: none; color: red;"> *</a> </h5>
+ Attach photo(3x4,jpg): <input type="file" alt="No file chosen"><br><br>
+ Attach ID(faydaID/kebelleID):<input type="file" >
+ </div>
+   <div class="fees">
+    <h5>Registration Fee<a style="text-decoration-line: none; color: red;" >*</a></h5>
+    <input type="radio" name="bank"  id="cbe"> <label for="cbe">CBE </label>
+    <input type="radio" name="bank" id="hjr"> <label for="cbe">Hijra</label>
+    <input type="radio" name="bank" id="aws"> <label for="awash">Awash </label>
+    <input type="radio"name="bank" id="zmzm"> <label for="zmzm">Zamzam</label><br><br>
+   </div> 
+  </div>
+  </form>
+</fieldset>  
+            
+    </body>
+</html>
