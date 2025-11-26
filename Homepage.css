@@ -1,0 +1,42 @@
+    body { 
+            background-image: url(imageCopy.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(10px + 2vmin);
+            color: rgb(12, 15, 14);
+            margin: 10px 20px 10px 20px;
+        }
+        img {
+            height:300px;
+            border-radius: 50%;
+             border-style: outset;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00ff2f;
+            color: rgb(43, 26, 137);
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+    background-color: #2656af;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+        .home-card ,h1 ,h2 { 
+            background: linear-gradient(rgb(3, 82, 172) , green); 
+            border: none; 
+            padding: 10px 20px;
+        }
